@@ -115,4 +115,11 @@ class ProjetoController extends Controller
             ]);
         }
     }
+
+    public function restaurar(Request $request, $id)
+    {
+        $projeto = Projeto::onlyTrashed()->findOrFail($id);
+        $projeto->restore();
+        return $projeto;
+    }
 }

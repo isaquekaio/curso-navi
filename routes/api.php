@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //Route::get('projeto', 'ProjetoController@index');
 Route::resource('projetos', 'ProjetoController')->except(['create', 'edit']);
+Route::post('projetos/{id}/restaurar', 'ProjetoController@restaurar');
