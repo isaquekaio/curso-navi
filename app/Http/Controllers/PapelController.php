@@ -14,7 +14,7 @@ class PapelController extends Controller
 
     public function show($id)
     {
-        $papel = Papel::findOrFails($id);
+        $papel = Papel::findOrFail($id);
         return response()->json($papel);
     }
 
